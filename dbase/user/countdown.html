@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>24-hour countdown timer</title>
+    <style>
+      #countdown {
+        font-size: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="countdown">00:00:00</div>
+
+    <!-- chat gpt -->
+    <!-- <script>
+const timeoutDuration = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
+const countdownElement = document.getElementById('countdown');
+
+let startTime = parseInt(localStorage.getItem('countdownStartTime'), 10) || new Date().getTime();
+
+const timerId = setInterval(() => {
+  const remainingTime = timeoutDuration - (new Date().getTime() - startTime);
+  if (remainingTime <= 0) {
+    console.log('Countdown timer has expired!');
+    startTime = new Date().getTime();
+    localStorage.setItem('countdownStartTime', startTime);
+    remainingTime = timeoutDuration;
+  }
+  let hours = Math.floor(remainingTime / (60 * 60 * 1000));
+  let minutes = Math.floor((remainingTime % (60 * 60 * 1000)) / (60 * 1000));
+  let seconds = Math.floor((remainingTime % (60 * 1000)) / 1000);
+  hours = String(hours).padStart(2, '0');
+  minutes = String(minutes).padStart(2, '0');
+  seconds = String(seconds).padStart(2, '0');
+  countdownElement.textContent = `${hours}:${minutes}:${seconds}`;
+}, 1000);
+    </script> -->
+
+<!-- Youtube -->
+<!-- <script>
+//'Mar 11 2015' current.getTime() = 1426060964567
+const followingDay = new Date(new Date().getTime() + 86400000).getTime(); 
+// const followingDay = new Date(now + 86400000).getTime(); 
+// const now = new Date().getTime();
+// + 1 day in ms
+const countdown = () => {
+// var countDate = new Date('May 2, 2023 20:00:00').getTime();
+const now = new Date().getTime();
+const gap = followingDay - now;
+
+const sec = 1000;
+const mins = sec * 60;
+const hour = mins * 60;
+const day = hour * 24;
+
+const textDay = Math.floor(gap / day);
+const textHour = Math.floor((gap % day) / hour);
+const textMins = Math.floor((gap % hour) / mins);
+const textSec = Math.floor((gap % mins) / sec);
+
+document.querySelector(".day").innerText = textDay;
+document.querySelector(".hour").innerText = textHour;
+document.querySelector('#mins').innerText = textMins;
+document.querySelector('#sec').innerText = textSec;
+}
+setInterval(countdown, 1000);
+</script> -->
+
+
+  </body>
+</html>

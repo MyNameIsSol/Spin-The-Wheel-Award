@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="spinnn.css">
+    <link href="../../plugins/animate/animate.css" rel="stylesheet" type="text/css" />
+    <script src="../../plugins/sweetalerts/promise-polyfill.js"></script>
+    <link href="../../plugins/sweetalerts/sweetalert2.min.css" rel="stylesheet" type="text/css" />
+    <link href="../../plugins/sweetalerts/sweetalert.css" rel="stylesheet" type="text/css" />
+    <link href="../../asset_swtalrt/css/components/custom-sweetalert.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    
+    <div class="myspin">
+        <div class="mainbox" id="mainbox">
+          <div class="box" id="box">
+               <div class="box1">
+                <span class="font span1"><h5>Smart Tv 34 Inc (No spin)</h5></span>
+                <span class="font span2"><h5>Asus ROG</h5></span>
+                <span class="font span3"><h5>Air Conditioner</h5></span>
+                <span class="font span4"><h5>Speaker Portable(No spin)</h5></span>
+                <span class="font span5"><h5>Playstation 4 Slim</h5></span>
+               </div>
+               <div class="box2">
+                <span class="font span1"><h5>Zonk</h5></span>
+                <span class="font span2"><h5>Headset Gaming</h5></span>
+                <span class="font span3"><h5>Ipad Mini 5 (No spin)</h5></span>
+                <span class="font span4"><h5>Camera Sport Action</h5></span>
+                <span class="font span5"><h5>Drone Mini T67</h5></span>
+               </div>
+          </div>
+          <button class="spin">SPIN</button>
+        </div>
+        </div>
+
+        <!-- BEGIN THEME GLOBAL STYLE -->
+  <script src="../../plugins/sweetalerts/sweetalert2.min.js"></script>
+  <script src="../../plugins/sweetalerts/custom-sweetalert.js"></script>
+        <script>
+            let spinBtn = document.querySelector('.spin');
+
+            function shuffle(array){
+              var currentIndex = array.length,
+              randomIndex;
+
+              while(0 !== currentIndex){
+                randomIndex = Math.floor(Math.random()*currentIndex);
+                currentIndex--;
+                [array[currentIndex], array[randomIndex]] = [
+                  array[randomIndex],
+                  array[currentIndex],
+                ];
+              }
+              return array;
+            }
+          
+            spinBtn.onclick = function(){
+              const box = document.querySelector('.box');
+              const element = document.querySelector('.mainbox');
+              let selectItem = "";
+          
+              let AC = shuffle([1890, 2250, 2610]);
+              let Camera = shuffle([1850, 2210, 2570]);
+              let Zonk = shuffle([1770, 2130, 2490]);
+              let PS = shuffle([1810, 2130, 2490]);
+              let Headset = shuffle([1750, 2110, 2350]);
+              let Drone = shuffle([1630, 1990, 2350]);
+              let ROG = shuffle([1570, 1930, 2290]);
+              let TV = shuffle([1500, 1800, 2100]);
+// let speaker = shuffle([300, 500, 700]);
+// let ipad = shuffle([700, 900, 1100]);
+          
+            let results = shuffle([
+              AC[0],
+              Camera[0],
+              Zonk[0],
+              PS[0],
+              Headset[0],
+              Drone[0],
+              ROG[0],
+              TV[0],
+              // speaker[0],
+              // ipad[0],
+            ]);
+          
+            if(AC.includes(results[0])) selectItem = "$0.3";
+            if(Camera.includes(results[0])) selectItem = "$0.1";
+            if(Zonk.includes(results[0])) selectItem = "$0.14";
+            if(PS.includes(results[0])) selectItem = "$0.18";
+            if(Headset.includes(results[0])) selectItem = "$0.22";
+            if(Drone.includes(results[0])) selectItem = "$0.26";
+            if(ROG.includes(results[0])) selectItem = "$0.25";
+            if(TV.includes(results[0])) selectItem = "$0.21";
+            // if(speaker.includes(results[0])) selectItem = "$0.2";
+            // if(ipad.includes(results[0])) selectItem = "$0.5";
+          
+            box.style.setProperty("transition", "all ease 5s");
+            box.style.transform = "rotate("+ results[0] +"deg)";
+            element.classList.remove("animate");
+            setTimeout(function(){
+              element.classList.add("animate");
+            }, 5000);
+          
+            setTimeout(function(){
+              swal("Hurray! You Won", "You earned " + selectItem + "", "success")
+            },5500)
+          
+            setTimeout(function(){
+              box.style.setProperty("transition", "initial")
+              box.style.transform = "rotate(90deg)";
+            },6000);
+          
+            }
+          
+            // timess.onclick = function(){
+            //   home_spin.style.display = "none";
+            // }
+          </script>
+</body>
+</html>
+

@@ -1,0 +1,113 @@
+.question__accordin .card {
+    border: none;
+    border-radius: 0
+}
+
+.question__accordin .card .card-heading a {
+    margin-bottom: 16px;
+    position: relative;
+    padding-left: 25px;
+    cursor: pointer;
+    display: block;
+    font-weight: 700
+}
+
+.question__accordin .card .card-body {
+    padding: 0
+}
+
+.question__accordin .card-heading a:after {
+    position: absolute;
+    left: 0;
+    top: 4px
+}
+
+.question__accordin .card-heading a:after,
+.question__accordin .card-heading>a.active[aria-expanded=false]:after {
+    content: "+";
+    font-family: eleganticons;
+    font-size: 14px;
+    height: 15px;
+    width: 15px;
+    background: #4c57d6;
+    line-height: 15px;
+    text-align: center;
+    color: #fff
+}
+
+.question__accordin .card-heading a[aria-expanded=true]:after,
+.question__accordin .card-heading>a.active:after {
+    content: "-";
+    font-family: eleganticons;
+    font-size: 14px;
+    height: 15px;
+    width: 15px;
+    background: #4c57d6;
+    line-height: 15px;
+    text-align: center;
+    color: #fff
+}
+
+.question-form input {
+    font-size: 14px;
+    color: #444;
+    width: 100%;
+    height: 50px;
+    padding-left: 20px;
+    border: 1px solid #e1e1e1;
+    margin-bottom: 20px;
+    border-radius: 10px
+}
+
+.question-form input::-webkit-input-placeholder {
+    color: #444
+}
+
+.question-form input::-moz-placeholder {
+    color: #444
+}
+
+.question-form input:-ms-input-placeholder {
+    color: #444
+}
+
+.question-form input::-ms-input-placeholder {
+    color: #444
+}
+
+.question-form input::placeholder {
+    color: #444
+}
+
+.question-form textarea {
+    font-size: 14px;
+    color: #444;
+    width: 100%;
+    height: 100px;
+    padding-left: 20px;
+    border: 1px solid #e1e1e1;
+    margin-bottom: 14px;
+    border-radius: 10px;
+    resize: none;
+    padding-top: 12px
+}
+
+.question-form textarea::-webkit-input-placeholder {
+    color: #444
+}
+
+.question-form textarea::-moz-placeholder {
+    color: #444
+}
+
+.question-form textarea:-ms-input-placeholder {
+    color: #444
+}
+
+.question-form textarea::-ms-input-placeholder {
+    color: #444
+}
+
+.question-form textarea::placeholder {
+    color: #444
+}
